@@ -13,6 +13,7 @@ npm install serverless jest jest-environment-serverless
 Update your Jest configuration to set the [testEnvironment](https://jestjs.io/docs/en/configuration#testenvironment-string) to `jest-environment-serverless`:
 
 _package.json_
+
 ```json
 {
   "name": "my-project",
@@ -60,6 +61,7 @@ This global variable provides convenient access to the [lambda-wrapper](https://
 When provided with a valid `Serverless` function name, `getWrapper` will return a configured, ready-to-run [lambda wrapper](https://github.com/nordcloud/lambda-wrapper).
 
 With a simple `serverless.yml`
+
 ```yaml
 service: jest-test-suite
 provider:
@@ -120,6 +122,7 @@ You can also dynamically modify the configuration or services to assist while te
 Exposes the environment variables for the function defined in your Serverless Configuration. For example:
 
 With a simple `serverless.yml`
+
 ```yaml
 service: jest-test-suite
 provider:
@@ -136,6 +139,7 @@ functions:
 ```
 
 Calling `getEnv` would return:
+
 ```javascript
 // This is the name of the lambda declared in the "functions" block in the
 // serverless.yml
@@ -148,6 +152,7 @@ assert.deepEqual(envVars, { HELLO: 'world us-east-1' });
 Updates `process.env` with the environment variables for the function defined in your Serverless Configuration. For example:
 
 With a simple `serverless.yml`
+
 ```yaml
 service: jest-test-suite
 provider:
@@ -169,6 +174,7 @@ functions:
 ```
 
 Calling `setEnv` would return:
+
 ```javascript
 // All serverless env vars are initially loaded, but lambda env vars are
 // not prioritized and may override one another

@@ -1,25 +1,7 @@
 {
-  "name": "jest-environment-serverless",
-  "version": "0.2.4",
   "author": "FireEye, Inc.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fireeye/jest-environment-serverless"
-  },
   "bugs": {
     "url": "https://github.com/fireeye/jest-environment-serverless/issues"
-  },
-  "license": "SEE LICENSE IN LICENSE.txt",
-  "main": "src/index.js",
-  "keywords": [
-    "jest",
-    "serverless"
-  ],
-  "engines": {
-    "node": ">=8.0.0"
-  },
-  "scripts": {
-    "test": "npx jest"
   },
   "dependencies": {
     "lambda-wrapper": "^0.3.0"
@@ -37,21 +19,31 @@
     "jest-util": "^30.3.0",
     "serverless": "^4.33.0"
   },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [ "text" ],
+    "silent": true,
+    "testEnvironment": "node",
+    "testMatch": [ "**/__tests__/**/?(*.)+(spec|test).js?(x)", "**/?(*.)+(spec|test).js?(x)" ],
+    "verbose": true
+  },
+  "keywords": [ "jest", "serverless" ],
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "main": "src/index.js",
+  "name": "jest-environment-serverless",
   "peerDependencies": {
     "jest-environment-node": "23.x || 24.x",
     "serverless": ">=1.46"
   },
-  "jest": {
-    "collectCoverage": true,
-    "coverageReporters": [
-      "text"
-    ],
-    "silent": true,
-    "testEnvironment": "node",
-    "testMatch": [
-      "**/__tests__/**/?(*.)+(spec|test).js?(x)",
-      "**/?(*.)+(spec|test).js?(x)"
-    ],
-    "verbose": true
-  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fireeye/jest-environment-serverless"
+  },
+  "scripts": {
+    "test": "npx jest"
+  },
+  "version": "0.2.4"
 }
